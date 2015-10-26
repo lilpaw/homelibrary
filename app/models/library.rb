@@ -1,6 +1,11 @@
 class Library < ActiveRecord::Base
+
+  serialize :movie_id, Array
+  serialize :game_id, Array
+  serialize :book_id, Array
+
   belongs_to :user
-  has_and_belongs_to_many :movies
-  has_and_belongs_to_many :books
-  has_and_belongs_to_many :games
+  belongs_to :movie
+  belongs_to :book
+  belongs_to :game
 end

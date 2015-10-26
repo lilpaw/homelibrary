@@ -1,3 +1,4 @@
 class Game < ActiveRecord::Base
-  has_and_belongs_to_many :libraries
+  has_many :libraries
+  has_one :user, through: :libraries
 end
