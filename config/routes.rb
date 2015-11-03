@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -25,6 +25,13 @@ Rails.application.routes.draw do
   #       get 'sold'
   #     end
   #   end
+
+# These routes ensure that the user has to be signed in before any libraries, movies, books, or games are created.
+
+
+      resources :user do
+        resources :libraries, :movies, :books, :games
+      end
 
   # Example resource route with sub-resources:
   #   resources :products do
